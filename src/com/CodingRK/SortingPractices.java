@@ -45,8 +45,9 @@ public class SortingPractices {
     public static void insertionSort(int[] inputArr) {
         for (int i=1; i<inputArr.length; i++ ){
             int curr = inputArr[i];
+            System.out.println(curr);
             int prevIndex = i-1;
-            //finding the
+            //finding the right position for current element
             while (prevIndex >= 0 && inputArr[prevIndex]>curr){
                 inputArr[prevIndex+1] = inputArr[prevIndex];
                 prevIndex--;
@@ -83,7 +84,7 @@ public class SortingPractices {
 
     public static void main(String[] args) {
         int[] testArr = {6,2,5,4,1,3};
-        countingSort(testArr);
+        insertionSort(testArr);
         arrayPrint(testArr);
     }
 }

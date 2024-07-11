@@ -7,9 +7,13 @@ public class ArrayPrint {
     public static void arrayPrint(int[] inputArr) {
         System.out.print("[ ");
         for(int i=0; i<inputArr.length; i++){
-            System.out.print(inputArr[i] + ",");
+            System.out.print(inputArr[i]);
+            if (i!=inputArr.length-1){
+                System.out.print(", ");
+            }
+
         }
-        System.out.print("]");
+        System.out.print(" ]");
     }
 
     public static void main(String[] args) {
