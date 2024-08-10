@@ -30,7 +30,7 @@ public class TrappedRainWater {
     }
 
     public static void main(String[] args) {
-        int[] testArray = {3, 2, 2, 3};
+        int[] testArray = {5, 2,5, 2, 3};
         int ans = calculateTrappedRainWater(testArray);
         System.out.println(ans);
     }
