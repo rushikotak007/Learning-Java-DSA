@@ -82,9 +82,58 @@ public class SortingPractices {
         }
     }
 
+    public static void mergeSort(int[] arr, int si, int ei){
+
+        if(si>=ei){
+            return;
+        }
+
+        //Recursion call
+        int mid = si + (ei-si)/2;
+        mergeSort(arr, si, mid); //Left sort
+        mergeSort(arr, mid+1, ei); //Right sort
+        merge(arr, si, mid, ei);
+
+    }
+
+    public static void merge(int[] arr, int si, int mid, int ei){
+        int temp[] = new int[ei - si + 1];
+
+        int i = si; //iterator for left array
+        int j = mid+1; //iterator for right array
+        int k = 0; //iterator for temp array
+
+        while( i<= mid && j<=ei){
+            if(arr[i]<arr[j]){
+                temp[k] = arr[i];
+                i++;
+            }else{
+                temp[k] = arr[j];
+                j++;
+            }
+            k++;
+        }
+
+        //Left part
+        while( i <= mid){
+            temp[k++]= arr[i++];
+        }
+ 
+        //Right part
+        while( j <= ei){
+            temp[k++]= arr[j++];
+        }
+
+        //Copying the temp array to original one
+        for(int x=0; x<temp.length; x++){
+            arr[si+x] = temp[x];
+        }
+
+    }
+
     public static void main(String[] args) {
         int[] testArr = {6,2,5,4,1,3};
-        insertionSort(testArr);
+        mergeSort(testArr,0, testArr.length-1);
         arrayPrint(testArr);
     }
 }
