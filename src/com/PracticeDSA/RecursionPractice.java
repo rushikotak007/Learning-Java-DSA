@@ -68,14 +68,49 @@ public class RecursionPractice {
     }
 
     //Rotated Search Array
+    public static int rotatedSearch(int[] arr, int target, int si, int ei){
 
+        //Base Case
+        if(si>ei){
+            return -1;
+        }
+
+        int mid = si + (ei - si)/2;
+
+        //Case 1 : target lies on the mid
+        if(target == arr[mid]){
+            return mid;
+        }
+
+        //Case 2 : if mid is on l1
+        if(arr[si]<arr[mid]){
+            //if target is on left of mid
+            if(target>arr[si] && target < arr[mid]){
+                return rotatedSearch(arr, target, si, mid-1);
+            }
+            //if target is on right of mid
+            else {
+                return rotatedSearch(arr,target,mid+1,ei);
+            }
+        }
+        //Case 3 : if mid lies on l2
+        else{
+            //If target is on the right side of mid
+            if(target > arr[mid] && target<arr[ei]){
+                return rotatedSearch(arr,target,mid+1,ei);
+            }else{
+                return rotatedSearch(arr,target,si,mid-1);
+            }
+        }
+    }
 
     public static void main(String[] args) {
 //        System.out.println(getPower(2,3));
 //        towerOfHanoi(3, "A", "B", "C");
-        int[] testArr = {2,4,3,8,6,1};
-        quickSort(testArr, 0,testArr.length-1);
-        arrayPrint(testArr);
+        int[] testArr = {5,6,7,8,9,1,2,3,4};
+//        quickSort(testArr, 0,testArr.length-1);
+        System.out.println(rotatedSearch(testArr,2,0,testArr.length-1));
+//        arrayPrint(testArr);
     }
 
 }
