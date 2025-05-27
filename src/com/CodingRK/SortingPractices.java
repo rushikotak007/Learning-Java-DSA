@@ -82,6 +82,21 @@ public class SortingPractices {
         }
     }
 
+
+    public static void insertionSortPractice(int[] arr){
+        int n = arr.length;
+
+        //It is for iteration of every element
+        for (int i = 0; i <= n; i++) {
+
+            //it is for finding right element for each position
+            for (int j = i; j >= 0 ; j++) {
+                //if the element is greator than the previous one than swap with the earlier one cosidering a part of array as sorted
+                
+            }
+        }
+    }
+
     public static void mergeSort(int[] arr, int si, int ei){
 
         if(si>=ei){
