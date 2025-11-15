@@ -37,10 +37,20 @@ public class revision {
         reverseArray(arr, iterator+1);
     }
 
+    public static void swap(int a, int b){
+        int temp = a;
+        a = b;
+        b = temp;
+
+        return;
+    }
+
     public static void main(String[] args) {
         int[] temp = new int[]{1,2,3,4,5};
 //        reverseArray(temp,0);
-        System.out.println(nthFibonacci(5));
+
+
+//        System.out.println(nthFibonacci(5));
     }
 
 }
