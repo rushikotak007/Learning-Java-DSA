@@ -181,7 +181,7 @@ public class LL <T>{
         fourth.next = fifth;
         // This creates a loop
         printLL(head);
-        head = reverseLL(head);
+//        head = reverseLL(head);
         printLL(head);
 //        System.out.print(isPalindrome(head));
     }
