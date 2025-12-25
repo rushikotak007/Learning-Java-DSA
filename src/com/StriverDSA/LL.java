@@ -18,7 +18,7 @@ class Node<T> {
     }
 }
 
-public class LL <T>{
+public class LL<T>{
 
     private Node<T> head;
 
@@ -132,7 +132,7 @@ public class LL <T>{
         return true;
     }
 
-    public static <T>Node reverseLL(Node<T> head, Node<T> lastNode ){
+    public static <T>Node reverseLL(Node<T> head){
 
         Node<T> prev = null;
         Node<T> curr = head;
@@ -147,6 +147,10 @@ public class LL <T>{
 
         return prev;
     }
+
+//    public static <T>Node sortLinkedList(Node<T> head){
+//
+//    }
 
 
     //Print the Linked List
